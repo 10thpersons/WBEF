@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Section } from '../components/Section';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 
 export const Participate: React.FC = () => {
   return (
@@ -22,19 +23,7 @@ export const Participate: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900">Email Us</h3>
-                    <p className="text-slate-500">andrew@synapzemy.com</p>
                     <p className="text-slate-500">info@wbef2026.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-blue-600">
-                    <Phone />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900">Call Us</h3>
-                    <p className="text-slate-500">+60 12-515 8185</p>
-                    <p className="text-xs text-slate-400 mt-1">Mon-Fri, 9am - 6pm MST</p>
                   </div>
                 </div>
 
@@ -52,51 +41,29 @@ export const Participate: React.FC = () => {
             </Section>
          </div>
 
-         {/* Right: Form */}
-         <div className="p-12 lg:p-24 flex flex-col justify-center">
+         {/* Right: CTA to Google Form */}
+         <div className="p-12 lg:p-24 flex flex-col justify-center items-center text-center">
            <Section delay={0.2} className="max-w-md mx-auto w-full">
-             <h2 className="text-2xl font-bold text-slate-900 mb-6">Express Your Interest</h2>
-             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-               <div className="grid grid-cols-2 gap-4">
-                 <div>
-                   <label className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                   <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="Jane" />
-                 </div>
-                 <div>
-                   <label className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                   <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="Doe" />
-                 </div>
-               </div>
-
-               <div>
-                 <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                 <input type="email" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="jane@company.com" />
-               </div>
-
-               <div>
-                 <label className="block text-sm font-medium text-slate-700 mb-1">Organization</label>
-                 <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="Company Name" />
-               </div>
-
-               <div>
-                 <label className="block text-sm font-medium text-slate-700 mb-1">Interest Type</label>
-                 <select className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white">
-                   <option>Visitor</option>
-                   <option>Exhibitor</option>
-                   <option>Sponsor</option>
-                   <option>Media</option>
-                 </select>
-               </div>
-
-               <div>
-                 <label className="block text-sm font-medium text-slate-700 mb-1">Message</label>
-                 <textarea rows={4} className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="Tell us more about your interest..."></textarea>
-               </div>
-
-               <button type="submit" className="w-full py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30">
-                 Submit Interest
-               </button>
-             </form>
+             <div className="mb-8">
+               <h2 className="text-3xl font-bold text-slate-900 mb-4">Express Your Interest</h2>
+               <p className="text-slate-600">
+                 Registration for the Sultan Mizan World Blue Economy Forum 2026 is now open for expressions of interest. 
+                 Please fill out our official form to secure your place as a visitor, exhibitor, or sponsor.
+               </p>
+             </div>
+             
+             <a 
+               href="https://forms.gle/Zb1RMDGLJrchM7kEA" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               className="w-full py-5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 group"
+             >
+               <span>Go to Registration Form</span>
+               <ExternalLink size={20} className="group-hover:translate-x-1 transition-transform" />
+             </a>
+             <p className="text-xs text-slate-400 mt-6">
+               You will be redirected to our secure Google Form page.
+             </p>
            </Section>
          </div>
        </div>

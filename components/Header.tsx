@@ -1,7 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Anchor } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { NavItem } from '../types';
+import { Logo } from './Logo';
 
 const navItems: NavItem[] = [
   { label: 'Home', path: '/' },
@@ -32,22 +34,22 @@ export const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || isMobileMenuOpen
-          ? 'bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm'
-          : 'bg-transparent text-white'
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-2'
+          : 'bg-transparent text-white py-4'
       }`}
     >
-      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo Area */}
-        <NavLink to="/" className="flex items-center gap-2 group">
-          <div className={`p-2 rounded-lg transition-colors ${isScrolled ? 'bg-blue-600 text-white' : 'bg-white text-blue-900'}`}>
-            <Anchor size={24} />
+        <NavLink to="/" className="flex items-center gap-3 group">
+          <div className="relative w-16 h-16 md:w-20 md:h-20 transition-all duration-300">
+             <Logo color={isScrolled ? 'blue' : 'white'} className="w-full h-full drop-shadow-sm" />
           </div>
-          <div className="flex flex-col">
+          <div className={`flex flex-col border-l pl-3 ${isScrolled ? 'border-slate-300' : 'border-white/30'}`}>
+             <span className={`text-[10px] font-bold uppercase tracking-widest ${isScrolled ? 'text-blue-600' : 'text-blue-200'}`}>
+              Sultan Mizan
+            </span>
             <span className={`font-bold text-lg leading-none tracking-tight ${isScrolled ? 'text-slate-900' : 'text-white'}`}>
               WBEF <span className="font-light">2026</span>
-            </span>
-            <span className={`text-[10px] uppercase tracking-widest ${isScrolled ? 'text-slate-500' : 'text-slate-200'}`}>
-              Sultan Mizan World Blue Economy Forum
             </span>
           </div>
         </NavLink>
@@ -71,16 +73,18 @@ export const Header: React.FC = () => {
               {item.label}
             </NavLink>
           ))}
-          <NavLink
-            to="/participate"
+          <a
+            href="https://forms.gle/Zb1RMDGLJrchM7kEA"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
               isScrolled
-                ? 'bg-slate-900 text-white hover:bg-slate-800'
-                : 'bg-white text-slate-900 hover:bg-slate-100'
+                ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-500/30'
+                : 'bg-white text-slate-900 hover:bg-slate-100 shadow-lg shadow-white/10'
             }`}
           >
             Register Interest
-          </NavLink>
+          </a>
         </nav>
 
         {/* Mobile Toggle */}
@@ -94,7 +98,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-white border-b border-slate-200 shadow-xl h-screen">
+        <div className="md:hidden absolute top-[100%] left-0 right-0 bg-white border-b border-slate-200 shadow-xl h-screen">
           <div className="flex flex-col p-6 gap-6">
             {navItems.map((item) => (
               <NavLink
@@ -110,12 +114,14 @@ export const Header: React.FC = () => {
               </NavLink>
             ))}
             <div className="pt-6 border-t border-slate-100">
-              <NavLink
-                to="/participate"
+              <a
+                href="https://forms.gle/Zb1RMDGLJrchM7kEA"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full text-center py-4 bg-blue-600 text-white rounded-xl text-lg font-bold"
               >
                 Register Interest
-              </NavLink>
+              </a>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Section } from '../components/Section';
 import { Check, Star } from 'lucide-react';
@@ -55,6 +56,12 @@ const tiers: SponsorshipTier[] = [
 ];
 
 export const Sponsorship: React.FC = () => {
+  const handleInquiry = (tier: SponsorshipTier) => {
+    const subject = encodeURIComponent(`Sponsorship Inquiry: ${tier.name} Package`);
+    const body = encodeURIComponent(`Hi WBEF Team,\n\nI am interested in the ${tier.name} sponsorship package (${tier.price}).\n\nPlease send me more details regarding this opportunity.\n\nBest regards,`);
+    window.location.href = `mailto:info@wbef2026.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <div className="pt-20 bg-slate-50 min-h-screen">
       <section className="bg-slate-900 py-24 px-6 text-center">
@@ -97,7 +104,9 @@ export const Sponsorship: React.FC = () => {
                 ))}
               </ul>
 
-              <button className={`w-full py-3 rounded-xl font-semibold transition-colors ${
+              <button 
+                onClick={() => handleInquiry(tier)}
+                className={`w-full py-3 rounded-xl font-semibold transition-colors ${
                 tier.isPopular 
                   ? 'bg-blue-600 text-white hover:bg-blue-700' 
                   : 'bg-slate-100 text-slate-900 hover:bg-slate-200'
@@ -118,7 +127,14 @@ export const Sponsorship: React.FC = () => {
           </div>
           <div className="flex items-center gap-6">
             <div className="text-2xl font-bold text-slate-900">$2,000</div>
-            <button className="px-6 py-3 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-colors">
+            <button 
+              onClick={() => {
+                 const subject = encodeURIComponent(`Exhibitor Inquiry: Standard Exhibitor`);
+                 const body = encodeURIComponent(`Hi WBEF Team,\n\nI am interested in the Standard Exhibitor booth ($2,000).\n\nPlease send me more details.\n\nBest regards,`);
+                 window.location.href = `mailto:info@wbef2026.com?subject=${subject}&body=${body}`;
+              }}
+              className="px-6 py-3 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-colors"
+            >
               Book Booth
             </button>
           </div>

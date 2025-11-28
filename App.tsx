@@ -3,7 +3,6 @@ import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { ChatWidget } from './components/ChatWidget';
 import { Home } from './pages/Home';
 import { Agenda } from './pages/Agenda';
 import { Sponsorship } from './pages/Sponsorship';
@@ -23,7 +22,6 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
-        <ChatWidget />
       </div>
     </HashRouter>
   );

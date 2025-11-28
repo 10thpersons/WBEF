@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Section } from '../components/Section';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Anchor, Leaf, Droplet, Zap, Heart, Cpu, Globe, Target, Shield, TrendingUp, Users, Waves } from 'lucide-react';
+import { ArrowRight, Anchor, Leaf, Droplet, Zap, Heart, Cpu, Globe, Target, Shield, TrendingUp, Users, Waves, Lightbulb, Briefcase } from 'lucide-react';
 import { Pillar, Speaker } from '../types';
 
 const pillars: Pillar[] = [
@@ -19,24 +20,24 @@ const speakers: Speaker[] = [
     role: 'Distinguished Professor & Acting Director (CBRC)', 
     institution: 'KAUST, Saudi Arabia',
     bio: 'A world-renowned geneticist and Distinguished Professor at King Abdullah University of Science and Technology (KAUST). He leads the Computational Bioscience Research Center, focusing on marine genomics and the utilization of marine resources for biotechnology.',
-    // Older Asian male academic, glasses
-    image: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?auto=format&fit=crop&q=80&w=500&h=600' 
+    // Distinguished Asian male professional
+    image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=500&h=600' 
   },
   { 
     name: 'Michelle Voyer', 
     role: 'Principal Research Fellow', 
     institution: 'ANCORS, University of Wollongong, Australia',
     bio: 'A leading social scientist at the Australian National Centre for Ocean Resources and Security (ANCORS). Her work explores the human dimension of the Blue Economy, focusing on equitable development, social license, and the integration of ocean industries with coastal communities.',
-    // Professional female academic/researcher
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=500&h=600' 
+    // Professional Asian female academic/researcher
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=500&h=600' 
   },
   { 
     name: 'Anthony Bellafiore', 
     role: 'Investment Manager', 
     institution: 'Katapult Ocean',
     bio: 'Investment Manager at Katapult Ocean, a leading venture fund dedicated to ocean impact startups. Anthony specializes in identifying and scaling high-potential technologies that address climate change and ocean health while delivering financial returns.',
-    // Young male professional, modern business look
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=500&h=600' 
+    // Young Asian male professional
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=500&h=600' 
   },
 ];
 
@@ -57,37 +58,43 @@ export const Home: React.FC = () => {
     <>
       {/* Hero Section */}
       <div className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-slate-900">
-        {/* Abstract Background */}
+        {/* Background Image - Deep Blue Ocean Texture (Abstract/Professional) */}
         <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-blue-900/60 to-slate-950 z-10"></div>
+            {/* Gradient overlay for text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-blue-900/20 to-slate-900/90 z-10"></div>
             <img 
-              src="https://images.unsplash.com/photo-1468581264429-2548ef9eb732?auto=format&fit=crop&q=80&w=2000" 
-              alt="Ocean Horizon" 
-              className="w-full h-full object-cover opacity-60 scale-105 animate-pulse-slow"
+              src="https://images.unsplash.com/photo-1484291470158-b8f8d608850d?auto=format&fit=crop&q=80&w=2669" 
+              alt="Deep blue ocean waves representing economic resilience" 
+              className="w-full h-full object-cover animate-pan-slow"
             />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center pt-20">
           <Section>
             <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-8 backdrop-blur-md">
               9 - 11 September 2026 • Kuala Lumpur
             </span>
-            <h1 className="text-5xl md:text-8xl font-bold text-white tracking-tighter mb-8 leading-none">
-              World Blue Horizon
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-8 leading-tight drop-shadow-lg">
+              Sultan Mizan <br />
+              <span className="block mt-2">
+                World Blue Economy Forum
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
-              Charting waves of sustainable progress and economic resilience.
+            <p className="text-lg md:text-2xl text-blue-50 max-w-3xl mx-auto mb-12 font-light leading-relaxed drop-shadow-md">
+              <span className="font-semibold text-white">World Blue Horizon:</span> Charting waves of sustainable progress and economic resilience.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
-              <Link 
-                to="/participate" 
-                className="px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-blue-50 transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-white/10"
+              <a 
+                href="https://forms.gle/Zb1RMDGLJrchM7kEA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-blue-50 transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-black/20"
               >
                 Reserve Your Spot <ArrowRight size={18} />
-              </Link>
+              </a>
               <Link 
                 to="/sponsorship" 
-                className="px-8 py-4 bg-transparent border border-slate-500 text-white rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm"
+                className="px-8 py-4 bg-white/10 border border-white/30 text-white rounded-full font-bold hover:bg-white/20 transition-all backdrop-blur-sm"
               >
                 Become a Partner
               </Link>
@@ -232,43 +239,69 @@ export const Home: React.FC = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <Section className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden h-[600px] shadow-2xl">
+            <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden h-[600px] shadow-2xl group">
+              {/* Maritime/Ship Image - Represents Blue Economy and Trade */}
               <img 
-                src="https://images.unsplash.com/photo-1542665952-14513db15293?auto=format&fit=crop&q=80&w=800" 
-                alt="Conference Discussion" 
-                className="w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&q=80&w=1000" 
+                alt="Large vessel navigating the open ocean" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent">
-                 <div className="absolute bottom-8 left-8 right-8 text-white">
-                   <p className="font-medium text-lg border-l-4 border-white pl-4">
-                     "A holistic framework to foster a more integrated, competitive, and environmentally conscious Blue Economy."
-                   </p>
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/20 to-transparent">
+                 <div className="absolute bottom-8 left-8 right-8">
+                   <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
+                      <p className="font-medium text-lg text-white leading-relaxed">
+                        "A holistic framework to foster a more integrated, competitive, and environmentally conscious Blue Economy."
+                      </p>
+                   </div>
                  </div>
               </div>
             </div>
             
             <div className="order-1 lg:order-2">
               <h4 className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4">Why Attend</h4>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-10">
                 Why Sultan Mizan World Blue Economy Forum?
               </h2>
               
               <div className="space-y-8">
-                <div>
-                   <h3 className="text-xl font-bold text-slate-900 mb-2">Addressing Shared Regional Challenges</h3>
-                   <p className="text-slate-600">A platform for careful ocean diplomacy and a united front to address complex challenges like marine litter and encroachment.</p>
+                <div className="flex gap-4">
+                   <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                      <Globe size={24} />
+                   </div>
+                   <div>
+                      <h3 className="text-xl font-bold text-slate-900 mb-2">Addressing Shared Regional Challenges</h3>
+                      <p className="text-slate-600 leading-relaxed">A platform for careful ocean diplomacy and a united front to address complex challenges like marine litter and encroachment.</p>
+                   </div>
                 </div>
-                <div>
-                   <h3 className="text-xl font-bold text-slate-900 mb-2">Attracting Sustainable Financing</h3>
-                   <p className="text-slate-600">Showcasing key players and innovative financial products to scale investments in blue transformation.</p>
+
+                <div className="flex gap-4">
+                   <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                      <TrendingUp size={24} />
+                   </div>
+                   <div>
+                      <h3 className="text-xl font-bold text-slate-900 mb-2">Attracting Sustainable Financing</h3>
+                      <p className="text-slate-600 leading-relaxed">Showcasing key players and innovative financial products to scale investments in blue transformation.</p>
+                   </div>
                 </div>
-                <div>
-                   <h3 className="text-xl font-bold text-slate-900 mb-2">Enhancing Knowledge Sharing</h3>
-                   <p className="text-slate-600">Sharing resources and know-how within nations to increase dynamic capabilities and adopt frontier technologies.</p>
+
+                <div className="flex gap-4">
+                   <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                      <Zap size={24} />
+                   </div>
+                   <div>
+                      <h3 className="text-xl font-bold text-slate-900 mb-2">Enhancing Knowledge Sharing</h3>
+                      <p className="text-slate-600 leading-relaxed">Sharing resources and know-how within nations to increase dynamic capabilities and adopt frontier technologies.</p>
+                   </div>
                 </div>
-                <div>
-                   <h3 className="text-xl font-bold text-slate-900 mb-2">Fostering Multi-Stakeholder Partnerships</h3>
-                   <p className="text-slate-600">A world-class experience for government officials, industry, academia, and NGOs to exchange ideas.</p>
+
+                <div className="flex gap-4">
+                   <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                      <Users size={24} />
+                   </div>
+                   <div>
+                      <h3 className="text-xl font-bold text-slate-900 mb-2">Fostering Multi-Stakeholder Partnerships</h3>
+                      <p className="text-slate-600 leading-relaxed">A world-class experience for government officials, industry, academia, and NGOs to exchange ideas.</p>
+                   </div>
                 </div>
               </div>
             </div>
