@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
         {/* Brand & Partners Column */}
         <div className="lg:col-span-5">
           <div className="flex items-center gap-3 mb-6">
-             <div className="w-14 h-14">
+             <div className="w-12 h-12">
                <Logo color="blue" />
              </div>
              <div className="flex flex-col">
@@ -25,12 +25,12 @@ export const Footer: React.FC = () => {
             for the entire Asia Pacific region.
           </p>
           
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Strategic Partners</span>
-            <div className="flex items-center gap-4">
-              <span className="font-bold text-slate-800 text-lg tracking-tight">UMT HOLDINGS</span>
-              <div className="h-5 w-px bg-slate-300"></div>
-              <span className="font-bold text-slate-800 text-lg tracking-tight">SYNAPZE</span>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 opacity-80">
+              <span className="font-serif font-bold text-slate-800 text-lg tracking-wide">UMT HOLDINGS</span>
+              <div className="hidden sm:block h-6 w-px bg-slate-300"></div>
+              <span className="font-sans font-extrabold text-slate-800 text-xl tracking-tight">SYNAPZE</span>
             </div>
           </div>
         </div>
@@ -38,26 +38,26 @@ export const Footer: React.FC = () => {
         {/* Event Details Column */}
         <div className="lg:col-span-4">
           <h4 className="text-slate-900 font-bold mb-6 text-sm uppercase tracking-wider">Event Details</h4>
-          <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0 mt-1">
-                <MapPin size={18} />
-              </div>
-              <div>
-                <p className="font-bold text-slate-900">MITEC</p>
-                <p className="text-sm text-slate-600">Malaysia International Trade &<br/>Exhibition Centre</p>
-                <p className="text-sm text-slate-500 mt-1">Kuala Lumpur, Malaysia</p>
-              </div>
+          
+          {/* Grid Layout for Perfect Alignment */}
+          <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-6">
+            {/* Venue Row */}
+            <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+               <MapPin size={18} />
             </div>
-            
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0 mt-1">
-                <Calendar size={18} />
-              </div>
-              <div>
-                <p className="font-bold text-slate-900">9 - 11 September 2026</p>
-                <p className="text-sm text-slate-600">Wednesday - Friday</p>
-              </div>
+            <div className="flex flex-col justify-center">
+               <p className="font-bold text-slate-900 text-sm md:text-base">MITEC</p>
+               <p className="text-sm text-slate-600 leading-tight">Malaysia International Trade &<br/>Exhibition Centre</p>
+               <p className="text-xs text-slate-500 mt-0.5">Kuala Lumpur, Malaysia</p>
+            </div>
+
+            {/* Date Row */}
+            <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+               <Calendar size={18} />
+            </div>
+            <div className="flex flex-col justify-center">
+               <p className="font-bold text-slate-900 text-sm md:text-base">9 - 11 September 2026</p>
+               <p className="text-sm text-slate-600">Wednesday - Friday</p>
             </div>
           </div>
         </div>

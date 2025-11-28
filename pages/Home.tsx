@@ -2,7 +2,7 @@
 import React from 'react';
 import { Section } from '../components/Section';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Anchor, Leaf, Droplet, Zap, Heart, Cpu, Globe, Target, Shield, TrendingUp, Users, Waves, Lightbulb, Briefcase } from 'lucide-react';
+import { ArrowRight, Anchor, Leaf, Droplet, Zap, Heart, Cpu, Globe, Target, Shield, TrendingUp, Users, Waves } from 'lucide-react';
 import { Pillar, Speaker } from '../types';
 
 const pillars: Pillar[] = [
@@ -84,14 +84,12 @@ export const Home: React.FC = () => {
               <span className="font-semibold text-white">World Blue Horizon:</span> Charting waves of sustainable progress and economic resilience.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
-              <a 
-                href="https://forms.gle/Zb1RMDGLJrchM7kEA"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link 
+                to="/participate"
                 className="px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-blue-50 transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-black/20"
               >
                 Reserve Your Spot <ArrowRight size={18} />
-              </a>
+              </Link>
               <Link 
                 to="/sponsorship" 
                 className="px-8 py-4 bg-white/10 border border-white/30 text-white rounded-full font-bold hover:bg-white/20 transition-all backdrop-blur-sm"

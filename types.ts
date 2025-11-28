@@ -41,6 +41,6 @@ export interface SponsorshipTier {
 }
 
 export interface ChatMessage {
-  role: 'user' | 'model';
+  role: 'model' | 'user';
   text: string;
 }

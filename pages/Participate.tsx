@@ -1,71 +1,95 @@
 
 import React from 'react';
 import { Section } from '../components/Section';
-import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { ArrowRight, User, Store, Gem, ExternalLink } from 'lucide-react';
 
 export const Participate: React.FC = () => {
   return (
-    <div className="pt-20 bg-white min-h-screen">
-       <div className="grid lg:grid-cols-2 min-h-[calc(100vh-80px)]">
-         {/* Left: Contact Info */}
-         <div className="bg-slate-50 p-12 lg:p-24 flex flex-col justify-center">
-            <Section>
-              <span className="text-blue-600 font-bold uppercase tracking-wider text-sm mb-4 block">Get Involved</span>
-              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8">Join the Blue Economy Revolution</h1>
-              <p className="text-lg text-slate-600 mb-12 max-w-md">
-                Whether you are an investor, a policy maker, or a technology provider, WBEF 2026 is the platform to define your industry's future.
-              </p>
+    <div className="pt-20 bg-slate-50 min-h-screen">
+       <div className="max-w-7xl mx-auto px-6 py-20 text-center">
+          <Section>
+            <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-bold tracking-widest uppercase mb-6">
+              Join the Movement
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Register Your Interest</h1>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Whether you are an industry leader, a solution provider, or a policy maker, 
+              WBEF 2026 offers unparalleled opportunities to connect and grow.
+            </p>
+          </Section>
+       </div>
 
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-blue-600">
-                    <Mail />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900">Email Us</h3>
-                    <p className="text-slate-500">info@wbef2026.com</p>
-                  </div>
-                </div>
+       <div className="max-w-7xl mx-auto px-6 pb-24">
+         
+         {/* Main CTA Box */}
+         <Section delay={0.1} className="max-w-3xl mx-auto bg-white rounded-3xl p-10 md:p-16 shadow-xl shadow-blue-900/5 border border-slate-100 text-center mb-20 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800"></div>
+            
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">Ready to Participate?</h2>
+            <p className="text-slate-600 mb-10 max-w-lg mx-auto text-lg">
+              Registration is handled via our official secure form. Click below to enter your details as a Visitor, Exhibitor, or Sponsor.
+            </p>
+            
+            <a 
+              href="https://forms.gle/Zb1RMDGLJrchM7kEA" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 text-white rounded-full font-bold text-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-xl shadow-blue-600/20 group"
+            >
+              Fill Registration Form 
+              <ExternalLink size={20} className="opacity-80 group-hover:translate-x-1 transition-transform" />
+            </a>
+            
+            <p className="mt-6 text-xs text-slate-400">
+              Opens in a new tab • Google Forms
+            </p>
+         </Section>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-blue-600">
-                    <MapPin />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900">Venue</h3>
-                    <p className="text-slate-500">MITEC (Malaysia International Trade & Exhibition Centre)</p>
-                    <p className="text-slate-500">Kuala Lumpur, Malaysia</p>
-                  </div>
-                </div>
-              </div>
+         {/* Categories */}
+         <div className="grid md:grid-cols-3 gap-8">
+            <Section delay={0.2} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+               <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-slate-700 mb-6">
+                 <User size={24} />
+               </div>
+               <h3 className="text-xl font-bold text-slate-900 mb-3">As a Visitor</h3>
+               <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                 Gain access to the exhibition hall, attend plenary sessions, and network with over 500 global delegates.
+               </p>
+               <ul className="text-sm text-slate-500 space-y-2">
+                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Exhibition Access</li>
+                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Networking Sessions</li>
+               </ul>
+            </Section>
+
+            <Section delay={0.3} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+               <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                 <Store size={24} />
+               </div>
+               <h3 className="text-xl font-bold text-slate-900 mb-3">As an Exhibitor</h3>
+               <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                 Showcase your innovations in one of our 6 thematic zones. Connect directly with buyers and investors.
+               </p>
+               <ul className="text-sm text-slate-500 space-y-2">
+                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Brand Visibility</li>
+                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Business Matching</li>
+               </ul>
+            </Section>
+
+            <Section delay={0.4} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+               <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 mb-6">
+                 <Gem size={24} />
+               </div>
+               <h3 className="text-xl font-bold text-slate-900 mb-3">As a Sponsor</h3>
+               <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                 Position your organization as a leader in the Blue Economy. Enjoy exclusive speaking slots and VIP access.
+               </p>
+               <ul className="text-sm text-slate-500 space-y-2">
+                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Thought Leadership</li>
+                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div> VIP Gala Access</li>
+               </ul>
             </Section>
          </div>
 
-         {/* Right: CTA to Google Form */}
-         <div className="p-12 lg:p-24 flex flex-col justify-center items-center text-center">
-           <Section delay={0.2} className="max-w-md mx-auto w-full">
-             <div className="mb-8">
-               <h2 className="text-3xl font-bold text-slate-900 mb-4">Express Your Interest</h2>
-               <p className="text-slate-600">
-                 Registration for the Sultan Mizan World Blue Economy Forum 2026 is now open for expressions of interest. 
-                 Please fill out our official form to secure your place as a visitor, exhibitor, or sponsor.
-               </p>
-             </div>
-             
-             <a 
-               href="https://forms.gle/Zb1RMDGLJrchM7kEA" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               className="w-full py-5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 group"
-             >
-               <span>Go to Registration Form</span>
-               <ExternalLink size={20} className="group-hover:translate-x-1 transition-transform" />
-             </a>
-             <p className="text-xs text-slate-400 mt-6">
-               You will be redirected to our secure Google Form page.
-             </p>
-           </Section>
-         </div>
        </div>
     </div>
   );

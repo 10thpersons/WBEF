@@ -73,10 +73,8 @@ export const Header: React.FC = () => {
               {item.label}
             </NavLink>
           ))}
-          <a
-            href="https://forms.gle/Zb1RMDGLJrchM7kEA"
-            target="_blank"
-            rel="noopener noreferrer"
+          <NavLink
+            to="/participate"
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
               isScrolled
                 ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-500/30'
@@ -84,7 +82,7 @@ export const Header: React.FC = () => {
             }`}
           >
             Register Interest
-          </a>
+          </NavLink>
         </nav>
 
         {/* Mobile Toggle */}
@@ -114,14 +112,12 @@ export const Header: React.FC = () => {
               </NavLink>
             ))}
             <div className="pt-6 border-t border-slate-100">
-              <a
-                href="https://forms.gle/Zb1RMDGLJrchM7kEA"
-                target="_blank"
-                rel="noopener noreferrer"
+              <NavLink
+                to="/participate"
                 className="block w-full text-center py-4 bg-blue-600 text-white rounded-xl text-lg font-bold"
               >
                 Register Interest
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>
