@@ -43,8 +43,9 @@ export const Agenda: React.FC = () => {
   const [activeDay, setActiveDay] = useState(0);
 
   return (
-    <div className="pt-20 bg-white min-h-screen">
-      <section className="bg-slate-900 py-20 text-center px-6">
+    <div className="bg-white min-h-screen">
+      {/* Dark Hero Section for Header Visibility */}
+      <section className="bg-slate-900 pt-32 pb-20 text-center px-6">
         <Section>
           <h1 className="text-4xl font-bold text-white mb-4">Event Programme</h1>
           <p className="text-slate-300 max-w-2xl mx-auto">

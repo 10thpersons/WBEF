@@ -55,15 +55,22 @@ const tiers: SponsorshipTier[] = [
 ];
 
 export const Sponsorship: React.FC = () => {
-  const handleInquiry = (tier: SponsorshipTier) => {
-    const subject = encodeURIComponent(`Sponsorship Inquiry: ${tier.name} Package`);
-    const body = encodeURIComponent(`Hi WBEF Team,\n\nI am interested in the ${tier.name} sponsorship package (${tier.price}).\n\nPlease send me more details regarding this opportunity.\n\nBest regards,`);
-    window.location.href = `mailto:info@wbef2026.com?subject=${subject}&body=${body}`;
+  const getMailtoLink = (tierName: string, price: string) => {
+    const subject = encodeURIComponent(`Sponsorship Inquiry: ${tierName} Package`);
+    const body = encodeURIComponent(`Hi WBEF Team,\n\nI am interested in the ${tierName} sponsorship package (${price}).\n\nPlease send me more details regarding this opportunity.\n\nBest regards,`);
+    return `mailto:info@wbef2026.com?subject=${subject}&body=${body}`;
+  };
+
+  const exhibitorMailto = () => {
+     const subject = encodeURIComponent(`Exhibitor Inquiry: Standard Exhibitor`);
+     const body = encodeURIComponent(`Hi WBEF Team,\n\nI am interested in the Standard Exhibitor booth ($2,000).\n\nPlease send me more details.\n\nBest regards,`);
+     return `mailto:info@wbef2026.com?subject=${subject}&body=${body}`;
   };
 
   return (
-    <div className="pt-20 bg-slate-50 min-h-screen">
-      <section className="bg-slate-900 py-24 px-6 text-center">
+    <div className="bg-slate-50 min-h-screen">
+      {/* Dark Hero Section for Header Visibility */}
+      <section className="bg-slate-900 pt-32 pb-20 px-6 text-center">
         <Section>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Partner With Impact</h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-8">
@@ -103,15 +110,15 @@ export const Sponsorship: React.FC = () => {
                 ))}
               </ul>
 
-              <button 
-                onClick={() => handleInquiry(tier)}
-                className={`w-full py-3 rounded-xl font-semibold transition-colors ${
+              <a 
+                href={getMailtoLink(tier.name, tier.price)}
+                className={`w-full py-3 rounded-xl font-semibold transition-colors text-center inline-block ${
                 tier.isPopular 
                   ? 'bg-blue-600 text-white hover:bg-blue-700' 
                   : 'bg-slate-100 text-slate-900 hover:bg-slate-200'
               }`}>
                 Inquire Now
-              </button>
+              </a>
             </Section>
           ))}
         </div>
@@ -126,16 +133,12 @@ export const Sponsorship: React.FC = () => {
           </div>
           <div className="flex items-center gap-6">
             <div className="text-2xl font-bold text-slate-900">$2,000</div>
-            <button 
-              onClick={() => {
-                 const subject = encodeURIComponent(`Exhibitor Inquiry: Standard Exhibitor`);
-                 const body = encodeURIComponent(`Hi WBEF Team,\n\nI am interested in the Standard Exhibitor booth ($2,000).\n\nPlease send me more details.\n\nBest regards,`);
-                 window.location.href = `mailto:info@wbef2026.com?subject=${subject}&body=${body}`;
-              }}
-              className="px-6 py-3 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-colors"
+            <a 
+              href={exhibitorMailto()}
+              className="px-6 py-3 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-colors inline-block text-center"
             >
               Book Booth
-            </button>
+            </a>
           </div>
         </Section>
       </div>

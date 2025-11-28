@@ -4,24 +4,25 @@ import { User, Store, Gem, ExternalLink } from 'lucide-react';
 
 export const Participate: React.FC = () => {
   return (
-    <div className="pt-20 bg-slate-50 min-h-screen">
-       <div className="max-w-7xl mx-auto px-6 py-20 text-center">
+    <div className="bg-slate-50 min-h-screen">
+       {/* Dark Hero Section for Header Visibility */}
+       <div className="bg-slate-900 pt-32 pb-20 px-6 text-center">
           <Section>
-            <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-bold tracking-widest uppercase mb-6">
+            <span className="inline-block py-1 px-3 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-200 text-xs font-bold tracking-widest uppercase mb-6">
               Join the Movement
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Register Your Interest</h1>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Register Your Interest</h1>
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
               Whether you are an industry leader, a solution provider, or a policy maker, 
               WBEF 2026 offers unparalleled opportunities to connect and grow.
             </p>
           </Section>
        </div>
 
-       <div className="max-w-7xl mx-auto px-6 pb-24">
+       <div className="max-w-7xl mx-auto px-6 py-12 pb-24">
          
          {/* Main CTA Box */}
-         <Section delay={0.1} className="max-w-3xl mx-auto bg-white rounded-3xl p-10 md:p-16 shadow-xl shadow-blue-900/5 border border-slate-100 text-center mb-20 relative overflow-hidden">
+         <Section delay={0.1} className="max-w-3xl mx-auto bg-white rounded-3xl p-10 md:p-16 shadow-xl shadow-blue-900/5 border border-slate-100 text-center mb-20 relative overflow-hidden -mt-16">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800"></div>
             
             <h2 className="text-3xl font-bold text-slate-900 mb-6">Ready to Participate?</h2>
