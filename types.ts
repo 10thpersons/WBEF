@@ -1,4 +1,3 @@
-
 export interface NavItem {
   label: string;
   path: string;
@@ -38,9 +37,4 @@ export interface SponsorshipTier {
   spots: string;
   features: string[];
   isPopular?: boolean;
-}
-
-export interface ChatMessage {
-  role: 'model' | 'user';
-  text: string;
 }
