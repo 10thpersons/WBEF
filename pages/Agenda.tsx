@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Section } from '../components/Section';
 import { AgendaDay } from '../types';
-import { Clock } from 'lucide-react';
 
 const agendaData: AgendaDay[] = [
   {
@@ -43,55 +42,65 @@ export const Agenda: React.FC = () => {
   const [activeDay, setActiveDay] = useState(0);
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* Dark Hero Section for Header Visibility */}
-      <section className="bg-slate-900 pt-32 pb-20 text-center px-6">
-        <Section>
-          <h1 className="text-4xl font-bold text-white mb-4">Event Programme</h1>
-          <p className="text-slate-300 max-w-2xl mx-auto">
+    <div className="bg-slate-50 min-h-screen">
+      {/* Tall Dark Hero Section to ensure Header Text Visibility */}
+      <section className="bg-slate-900 relative pt-40 pb-24 text-center px-6 min-h-[50vh] flex flex-col justify-center items-center">
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-900"></div>
+        
+        <Section className="relative z-10 max-w-4xl mx-auto">
+          <span className="text-blue-400 font-bold tracking-widest uppercase text-xs mb-4 block">Schedule & Programming</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">Event Programme</h1>
+          <p className="text-slate-300 text-xl max-w-2xl mx-auto font-light leading-relaxed">
             A curated three-day journey through policy, innovation, and investment in the Blue Economy.
           </p>
         </Section>
       </section>
 
-      <div className="max-w-5xl mx-auto px-6 py-12">
+      <div className="max-w-5xl mx-auto px-6 -mt-16 relative z-20 pb-24">
         {/* Tabs */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+        <div className="bg-white p-2 rounded-2xl shadow-xl shadow-slate-200/50 mb-12 flex flex-col md:flex-row gap-2">
           {agendaData.map((day, idx) => (
             <button
               key={idx}
               onClick={() => setActiveDay(idx)}
-              className={`px-8 py-4 rounded-xl text-left transition-all duration-300 border ${
+              className={`flex-1 py-4 px-6 rounded-xl text-center transition-all duration-300 ${
                 activeDay === idx
-                  ? 'bg-blue-600 border-blue-600 text-white shadow-lg scale-105'
-                  : 'bg-white border-slate-200 text-slate-600 hover:border-blue-300'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'bg-transparent text-slate-500 hover:bg-slate-50 hover:text-slate-900'
               }`}
             >
-              <span className="block text-xs font-bold uppercase tracking-wider opacity-80 mb-1">{day.day}</span>
-              <span className="block text-lg font-semibold">{day.date}</span>
+              <span className="block text-xs font-bold uppercase tracking-wider opacity-70 mb-1">{day.day}</span>
+              <span className="block text-lg font-bold">{day.date.split(',')[0]}</span>
+              <span className="block text-xs opacity-80 mt-1">{day.date.split(',')[1]}</span>
             </button>
           ))}
         </div>
 
         {/* Schedule */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {agendaData[activeDay].items.map((item, idx) => (
-            <Section key={idx} delay={idx * 0.05} className="group flex flex-col md:flex-row gap-6 p-6 rounded-2xl hover:bg-slate-50 border border-slate-100 transition-colors">
-              <div className="md:w-48 shrink-0 flex items-center gap-2 text-slate-500 font-mono text-sm">
-                <Clock size={16} />
-                {item.time}
-              </div>
-              <div className="flex-1">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                    {item.description && <p className="text-slate-600 text-sm">{item.description}</p>}
-                  </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide border ${
-                    item.type === 'keynote' ? 'bg-purple-50 text-purple-700 border-purple-200' :
-                    item.type === 'break' ? 'bg-slate-100 text-slate-600 border-slate-200' :
-                    item.type === 'ceremony' ? 'bg-amber-50 text-amber-700 border-amber-200' :
-                    'bg-blue-50 text-blue-700 border-blue-200'
+            <Section key={idx} delay={idx * 0.05} className="group relative bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+              <div className="flex flex-col md:flex-row gap-6 md:gap-10 md:items-center">
+                <div className="md:w-32 shrink-0">
+                  <div className="text-lg font-bold text-slate-900 font-mono">{item.time.split(' - ')[0]}</div>
+                  <div className="text-xs text-slate-400 font-mono mt-1">to {item.time.split(' - ')[1]}</div>
+                </div>
+                
+                <div className="w-px h-12 bg-slate-100 hidden md:block"></div>
+                
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{item.title}</h3>
+                  {item.description && <p className="text-slate-500 leading-relaxed">{item.description}</p>}
+                </div>
+                
+                <div className="shrink-0">
+                  <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide ${
+                    item.type === 'keynote' ? 'bg-purple-100 text-purple-700' :
+                    item.type === 'break' ? 'bg-slate-100 text-slate-600' :
+                    item.type === 'ceremony' ? 'bg-amber-100 text-amber-800' :
+                    'bg-blue-50 text-blue-700'
                   }`}>
                     {item.type}
                   </span>
