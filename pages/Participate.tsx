@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Section } from '../components/Section';
-import { ArrowRight, User, Store, Gem, ExternalLink } from 'lucide-react';
+import { User, Store, Gem, ExternalLink } from 'lucide-react';
 
 export const Participate: React.FC = () => {
   return (

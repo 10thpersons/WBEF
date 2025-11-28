@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Mail, MapPin, Calendar, Clock } from 'lucide-react';
+import { Mail, MapPin, Calendar } from 'lucide-react';
 import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {

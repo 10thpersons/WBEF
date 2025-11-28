@@ -7,8 +7,7 @@ interface LogoProps {
 
 export const Logo: React.FC<LogoProps> = ({ className = "", color = 'blue' }) => {
   const fillColor = color === 'white' ? '#ffffff' : '#1d4ed8'; // blue-700
-  const waveColor = color === 'white' ? '#1d4ed8' : '#ffffff'; // Inverted for contrast in the wave cut
-
+  
   return (
     <svg 
       viewBox="0 0 200 160" 

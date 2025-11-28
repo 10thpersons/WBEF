@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Section } from '../components/Section';
 import { AgendaDay } from '../types';
-import { Clock, Users, Mic, Coffee } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
 const agendaData: AgendaDay[] = [
   {

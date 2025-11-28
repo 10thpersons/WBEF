@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Section } from '../components/Section';
-import { Check, Star } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { SponsorshipTier } from '../types';
 
 const tiers: SponsorshipTier[] = [
